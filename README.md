@@ -1,18 +1,18 @@
-#Gulp-Haml 
-[![Build Status](https://travis-ci.org/stevelacy/gulp-haml.png?branch=master)](https://travis-ci.org/stevelacy/gulp-haml)
-[![NPM version](https://badge.fury.io/js/gulp-haml.png)](http://badge.fury.io/js/gulp-haml)
+#Gulp-Haml
+[![Build Status](https://travis-ci.org/stevelacy/gulp-haml.png?branch=master)](https://travis-ci.org/smithclay/gulp-hamlc)
+[![NPM version](https://badge.fury.io/js/gulp-haml.png)](http://badge.fury.io/js/gulp-hamlc)
 
-Issues with the output should be reported on [haml](https://github.com/creationix/haml-js)
+Issues with the output should be reported on [haml-coffee](https://github.com/netzpirat/haml-coffee)
 
 ## Information
 
 <table>
-<tr> 
-<td>Package</td><td>gulp-haml</td>
+<tr>
+<td>Package</td><td>gulp-hamlc</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Haml plugin for Gulp</td>
+<td>Haml plugin for Gulp-coffee</td>
 </tr>
 <tr>
 <td>Node Version</td>
@@ -26,7 +26,7 @@ Issues with the output should be reported on [haml](https://github.com/creationi
 
 ## Usage
 #### Install
-    npm install gulp-haml --save
+    npm install gulp-hamlc --save
 
 ## Examples
 
@@ -35,7 +35,7 @@ Issues with the output should be reported on [haml](https://github.com/creationi
 // Gulpfile.js
 // Require the needed packages
 var gulp = require('gulp');
-var haml = require('gulp-haml');
+var haml = require('gulp-hamlc');
 
 
 // Get one .haml file and render
@@ -55,7 +55,7 @@ gulp.task('one', function () {
 
 
 
-// Get and render all .haml files recursively 
+// Get and render all .haml files recursively
 gulp.task('haml', function () {
   gulp.src('./haml/**/*.haml')
     .pipe(haml())

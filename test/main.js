@@ -7,14 +7,14 @@ var fs = require('fs');
 require('mocha');
 
 describe('gulp haml', function(){
-  it('should render haml .haml to HTML .html', function(done){
+  it('should render haml .hamlc to a javascript template', function(done){
     var hamlStream = haml();
 
     var fakeFile = new gutil.File({
       base: "test/src",
       cwd: "test/",
-      path: "test/src/haml.haml",
-      contents: fs.readFileSync('test/src/haml.haml')
+      path: "test/src/haml.hamlc",
+      contents: fs.readFileSync('test/src/haml.hamlc')
     });
 
     hamlStream.once('data', function(newFile){
@@ -34,7 +34,7 @@ describe('gulp haml', function(){
       base: "test/src",
       cwd: "test/",
       path: "test/src/haml.haml",
-      contents: fs.readFileSync('test/src/haml.haml')
+      contents: fs.readFileSync('test/src/haml.hamlc')
     });
 
     hamlStream.once('data', function(newFile){
