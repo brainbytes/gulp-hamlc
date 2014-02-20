@@ -1,6 +1,8 @@
-#Gulp-Haml
+#Gulp-Hamlc
 [![Build Status](https://travis-ci.org/stevelacy/gulp-haml.png?branch=master)](https://travis-ci.org/smithclay/gulp-hamlc)
 [![NPM version](https://badge.fury.io/js/gulp-haml.png)](http://badge.fury.io/js/gulp-hamlc)
+
+A modified version to gulp-haml to work with [haml-coffee](https://github.com/netzpirat/haml-coffee).
 
 Issues with the output should be reported on [haml-coffee](https://github.com/netzpirat/haml-coffee)
 
