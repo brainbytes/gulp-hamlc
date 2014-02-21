@@ -1,6 +1,7 @@
 var map = require('map-stream');
 var gutil = require('gulp-util');
 var hamlc = require('haml-coffee');
+var path = require('path');
 
 module.exports = function(options) {
   if(!options) options = {};
@@ -24,11 +25,10 @@ module.exports = function(options) {
     if (file.isNull()) return cb(null, file); // pass along
     if (file.isStream()) return cb(new Error("gulp-hamlc: Streaming not supported"));
 
-
-    var output = hamlc.compile(file.contents.toString("utf8"), options)(options.context);
+    var output = hamlc.template(file.contents.toString("utf8"), path.basename(file.path, path.extname(file.path)), options.namespace, options)
 
     file.path = gutil.replaceExtension(file.path, options.ext);
-    file.contents = new Buffer(wrapIt(htmlescape(output), options));
+    file.contents = new Buffer(output);
 
     cb(null, file);
   }
