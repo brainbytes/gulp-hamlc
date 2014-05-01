@@ -24,8 +24,9 @@ module.exports = function(options) {
     // Remember that contents is ALWAYS a buffer
     if (file.isNull()) return cb(null, file); // pass along
     if (file.isStream()) return cb(new Error("gulp-hamlc: Streaming not supported"));
-
-    var output = hamlc.template(file.contents.toString("utf8"), path.basename(file.path, path.extname(file.path)), options.namespace, options)
+    
+    var fn = options.compile ? hamlc.comile : hamlc.template;
+    var output = fn.call(hamlc, file.contents.toString("utf8"), path.basename(file.path, path.extname(file.path)), options.namespace, options);
 
     file.path = gutil.replaceExtension(file.path, options.ext);
     file.contents = new Buffer(output);
