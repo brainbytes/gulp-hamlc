@@ -87,7 +87,13 @@ You can view more examples in the [example folder.](https://github.com/stevelacy
 ## Options
 `Object, String`
 
-Options are passed straight through to the [haml](https://npmjs.org/package/haml) module with the exclusion of `ext`
+Options are passed straight through to the [haml](https://npmjs.org/package/haml) module with the exclusion of `ext` and `compile`
+
+### Options.compile
+`compile: bool`
+Example:
+
+    .pipe(haml{compile: true}))
 
 ### Options.ext
 `ext: String`
